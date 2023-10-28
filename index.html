@@ -2,47 +2,40 @@
 <html>
 <head>
     <style>
-        #clicker-container {
-            text-align: center;
-            position: relative;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
         }
 
         #cat-image {
             width: 200px;
             height: 200px;
-        }
-
-        #click-button {
-            font-size: 24px;
-            padding: 10px 20px;
             cursor: pointer;
         }
 
         #click-count {
             font-size: 24px;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div id="clicker-container">
-        <img id="cat-image" src="d75deedc638f289194546edd21ff3337.jpg" alt="Cat">
-        <button id="click-button">Click me!</button>
-    </div>
+    <img id="cat-image" src="d75deedc638f289194546edd21ff3337.jpg" alt="Cat">
     <p id="click-count">0</p>
     <script>
         // Initialize click count
         let clickCount = 0;
 
         // Get elements
-        const clickButton = document.getElementById("click-button");
+        const catImage = document.getElementById("cat-image");
         const clickCountDisplay = document.getElementById("click-count");
 
-        // Add click event listener
-        clickButton.addEventListener("click", () => {
+        // Add click event listener to the cat image
+        catImage.addEventListener("click", () => {
             // Increase click count
             clickCount++;
             // Update click count display
